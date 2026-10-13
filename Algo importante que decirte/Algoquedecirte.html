@@ -1,0 +1,476 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#090d18">
+    <title>Algo que quiero decirte</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <canvas id="particulas" aria-hidden="true"></canvas>
+    <div class="niebla niebla-1" aria-hidden="true"></div>
+    <div class="niebla niebla-2" aria-hidden="true"></div>
+
+    <main class="escena">
+        <header class="encabezado">
+            <span class="linea"></span>
+            <p>Hay algo que quiero decirte</p>
+            <span class="linea"></span>
+        </header>
+
+        <section class="zona-sobre" aria-label="Carta personal">
+            <button
+                id="sobre"
+                class="sobre"
+                type="button"
+                aria-label="Abrir la carta"
+                aria-expanded="false"
+                aria-controls="carta"
+            >
+                <span class="sombra-sobre"></span>
+
+                <span class="papel-sobre" aria-hidden="true"></span>
+
+                <span class="carta-dentro" aria-hidden="true">
+                    <span class="linea-papel"></span>
+                    <span class="linea-papel"></span>
+                    <span class="linea-papel corta"></span>
+                    <span class="corazon-papel">♡</span>
+                </span>
+
+                <span class="solapa" aria-hidden="true"></span>
+                <span class="frente-sobre" aria-hidden="true"></span>
+
+                <span class="sello" aria-hidden="true">♡</span>
+            </button>
+        </section>
+
+        <p class="instruccion" id="instruccion">
+            Haz clic en el sobre para abrirlo
+        </p>
+    </main>
+
+    <div id="velo" class="velo" aria-hidden="true"></div>
+
+    <section
+        id="carta"
+        class="carta-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="titulo-carta"
+        aria-hidden="true"
+        inert
+    >
+        <button
+            id="cerrar"
+            class="cerrar"
+            type="button"
+            aria-label="Cerrar la carta"
+        >×</button>
+
+        <article class="hoja">
+            <div class="detalle-superior" aria-hidden="true">♡</div>
+
+            <p class="saludo">Hay algo que quiero decirte</p>
+
+            <h1 id="titulo-carta">Y perdón si no son las mejores palabras</h1>
+
+            <div class="separador" aria-hidden="true">
+                <span></span> ♡ <span></span>
+            </div>
+
+            
+            <div class="contenido-carta">
+
+                <p>
+                    No sé muy bien cómo empezar esta carta. La estoy escribiendo
+                    una semana antes de que hablemos y, sinceramente, no sé qué
+                    palabras utilizarás ni qué me dirás en ese momento. Tampoco
+                    sé cómo terminará todo esto.
+                </p>
+
+                <p>
+                    Pero hay algo de lo que sí estoy seguro: quiero escribirte.
+                    <br>
+                    Quizá estas no sean las palabras más bonitas que vayas a leer
+                    de mí, al menos no hasta el final. Tampoco intento justificarme,
+                    hacerte sentir mal ni lastimarte.
+                    <br>
+                    Simplemente creo que es mejor escribir lo que siento y entregártelo.
+                </p>
+
+                <p>
+                    Pienso decírtelo en una llamada, pero me conozco. Sé que podría
+                    confundirme al hablar, quedarme sin palabras o no saber cómo
+                    continuar. Quizá suceda algo que nos impida hablar, o tal vez
+                    llegue el momento y no consiga expresar todo lo que llevo dentro.
+                    <br>
+                    Por eso prefiero escribirlo.
+                    <br>
+                    Aunque, si soy sincero, una parte de mí también necesita desahogarse.
+                </p>
+
+                <p>
+                    Y quiero que tengas algo presente antes de continuar: muchas de
+                    las cosas que voy a decirte son interpretaciones mías. No sé qué
+                    estás pensando ni qué estás sintiendo realmente. Puede que haya
+                    cosas que no esté entendiendo, y por eso también quiero escucharte.
+                </p>
+
+                <p class="pregunta-final">
+                    Hay algo que me ha estado doliendo.
+                </p>
+
+                <p>
+                    Durante este último mes te he sentido diferente. Más distante,
+                    más fría en algunos momentos, como si algo hubiera cambiado
+                    entre nosotros.
+                </p>
+
+                <p>
+                    Al principio preferí no decir nada. Recordaba que me habías
+                    contado que estabas ocupada con tus proyectos y pensé que esa
+                    era la razón. Lo entendí y decidí darte tu espacio.
+                </p>
+
+                <p>
+                    Después de un par de semanas, quise hablarte de cómo me estaba
+                    sintiendo. Te lo expliqué en un audio, pero, desde mi perspectiva,
+                    las cosas siguieron igual.
+                </p>
+
+                <p>
+                    Luego pasaste dos días sin aparecer y terminé escribiéndote
+                    para preguntarte si te sucedía algo, si me odiabas o si ya no
+                    me querías.
+                    <br>
+                    Aunque intenté decirlo como si fuera una broma, en realidad no
+                    lo era del todo. Una parte de mí lo preguntaba en serio.
+                </p>
+
+                <p>
+                    Me volviste a decir que eran tus proyectos y que habías estado
+                    pensando en muchas cosas, también en nosotros.
+                    <br>
+                    Lo acepté. No quería sacar conclusiones precipitadas ni asumir
+                    que algo malo estaba pasando entre los dos.
+                </p>
+
+                <p>
+                    Pero, después de todo este tiempo, me he dado cuenta de que ya
+                    no quiero seguir sintiéndome así sin saber qué está sucediendo.
+                </p>
+
+                <p>
+                    Sé que, técnicamente, no somos pareja. Sé que no puedo exigirte
+                    que me trates de determinada manera ni pretender que tengas las
+                    mismas necesidades que yo.
+                    <br>
+                    Visto desde fuera, podríamos decir que solo somos dos amigos.
+                    <br>
+                    Y lo entiendo.
+                    <br>
+                    Pero para mí nunca ha sido tan sencillo como eso.
+                </p>
+
+                <p>
+                    Porque hubo un tiempo en el que nos tratábamos de una manera
+                    diferente. Hablábamos de cosas más personales, teníamos
+                    conversaciones sentimentales y compartíamos momentos que me
+                    hacían sentir que estábamos construyendo algo más.
+                </p>
+
+                <p>
+                    Me enviabas TikToks que me hacían pensar en nosotros. Me decías
+                    buenos días y buenas madrugadas. Teníamos nuestras pequeñas
+                    costumbres, esas cosas que quizá parecían insignificantes,
+                    pero que para mí significaban mucho.
+                    <br>
+                    Y, poco a poco, todo eso fue desapareciendo.
+                </p>
+
+                <p>
+                    No te digo esto porque espere que vuelvas a hacer exactamente
+                    lo mismo que antes. Las personas cambian, las circunstancias
+                    cambian y entiendo que no siempre podemos mantener las mismas
+                    costumbres.
+                    <br>
+                    Te lo digo porque, con todo ese cambio, también empecé a sentir
+                    que yo estaba dejando de tener el mismo lugar en tu vida.
+                </p>
+
+                <p>
+                    Ya no me siento querido por ti de la misma manera.
+                    <br>
+                    Ya no siento que sea alguien especial para ti.
+                    <br>
+                    Y, aunque me duela admitirlo, a veces ni siquiera siento que
+                    todavía te guste.
+                    <br>
+                    Me siento ignorado, y no me gusta sentirme así.
+                </p>
+
+                <p>
+                    Durante un tiempo seguí enviándote mensajes, preguntas y audios
+                    de voz. Algunas cosas quedaron sin respuesta; otras preguntas
+                    preferí guardármelas para cuando pudiéramos volver a hablar.
+                </p>
+
+                <p>
+                    También hubo audios que escuchaste y otros que parecían quedarse
+                    olvidados. Normalmente te recordaba que los escucharas, una o
+                    dos veces si hacía falta, pero últimamente ya no me nacen las
+                    ganas de tener que hacerlo.
+                    <br>
+                    No porque quiera castigarte ni porque espere que estés pendiente
+                    de cada mensaje que te envío.
+                    <br>
+                    Simplemente porque llega un momento en el que insistir empieza
+                    a doler.
+                </p>
+
+                <p>
+                    Y no quiero que hablar conmigo se convierta en una obligación
+                    para ti, del mismo modo que tampoco quiero sentir que tengo que
+                    recordarte constantemente que estoy aquí.
+                </p>
+
+                <p class="pregunta-final">
+                    No necesito que me quieras como yo te quiero.
+                </p>
+
+                <p>
+                    De verdad intento comprender que tus proyectos ocupan gran parte
+                    de tu tiempo. Sé que tienes cosas que hacer, responsabilidades
+                    y una vida que no gira alrededor de mí.
+                    <br>
+                    Nunca he esperado que dejes todo para hablar conmigo.
+                </p>
+
+                <p>
+                    Tampoco espero que me hagas regalos, que recuerdes cada detalle
+                    o que expreses tus sentimientos exactamente como yo lo hago.
+                    Sé que somos diferentes y, desde que decidí arriesgarme a decirte
+                    lo que sentía, he intentado comprenderlo.
+                    <br>
+                    No necesito que seas como yo.
+                </p>
+
+                <p class="pregunta-destacada">
+                    Solo necesito sentir que todavía existe interés de tu parte.
+                </p>
+
+                <p>
+                    Que podamos comunicarnos, que haya un poco de reciprocidad y que
+                    no sea siempre yo quien intente mantener vivo lo que tenemos.
+                </p>
+
+                <p>
+                    A veces bastaría con un mensaje que dijera «Estoy bien»,
+                    «Hoy estoy ocupada, luego hablamos» o incluso un simple
+                    «¿Cómo estás?».
+                </p>
+
+                <p>
+                    No necesito que hablemos durante horas todos los días. Tampoco
+                    necesito que respondas inmediatamente a cada pregunta o que
+                    escuches todos mis audios en cuanto los envío.
+                    <br>
+                    Me bastaría con saber que, aunque estés ocupada, todavía quieres
+                    mantener este vínculo conmigo.
+                </p>
+
+                <p>
+                    Y, si estás pasando por algo, si necesitas espacio o si
+                    simplemente ya no tienes las mismas ganas de hablar conmigo,
+                    preferiría que me lo dijeras.
+                    <br>
+                    Puede que me duela escucharlo, pero al menos sabría qué está
+                    pasando. No tendría que quedarme imaginando todas las
+                    posibilidades ni preguntándome si hice algo mal.
+                </p>
+
+                <p>
+                    Porque sí, he llegado a preguntármelo.
+                    <br>
+                    He pensado en mis comentarios, en las cosas que te he dicho
+                    y en las posibles razones por las que podrías haberte distanciado.
+                    <br>
+                    Me he preguntado si hice algo que te molestó, si hubo algo que
+                    no supe ver o si simplemente estoy interpretando mal las cosas.
+                    <br>
+                    Y no he encontrado una respuesta.
+                </p>
+
+                <p>
+                    No sé si realmente hice algo mal. No sé si te está pasando algo
+                    que todavía no me has contado. Tampoco sé si tus sentimientos
+                    hacia mí han cambiado.
+                    <br>
+                    Y precisamente por eso quiero hablar contigo.
+                </p>
+
+                <p>
+                    No quiero seguir construyendo respuestas en mi cabeza sin saber
+                    si tienen algo que ver con lo que tú estás viviendo.
+                </p>
+
+                <p>
+                    A veces me pregunto si estoy exagerando, si estoy esperando
+                    demasiado o si simplemente estoy sintiendo demasiado la ausencia
+                    de alguien a quien quiero.
+                    <br>
+                    He sobrepensado tantas cosas que ya ni siquiera sé qué pensar.
+                </p>
+
+                <p>
+                    Pero, por mucho que intente encontrar una explicación, hay algo
+                    que no puedo negar: esta situación me está doliendo.
+                    <br>
+                    Y ya no quiero fingir que todo está bien cuando no es así.
+                </p>
+
+                <p class="pregunta-final">
+                    Porque estoy enamorado de ti.
+                </p>
+
+                <p>
+                    Te quiero demasiado.
+                    <br>
+                    Y ya no se trata solamente de que me gustes.
+                </p>
+
+                <p class="pregunta-destacada">
+                    ESTOY ENAMORADO DE TI.
+                </p>
+
+                <p>
+                    Me enamoré de tu forma de ser, de nuestras conversaciones,
+                    de las cosas que compartimos y de esa manera tan tuya de hacer
+                    que hasta una conversación cualquiera se vuelva especial para mí.
+                    <br>
+                    Me enamoré de la persona que fui conociendo y de lo que llegué
+                    a sentir a tu lado.
+                </p>
+
+                <p>
+                    Por eso me duele tanto sentir que, poco a poco, nos estamos
+                    convirtiendo en dos personas que ya no se tratan como antes.
+                </p>
+
+                <p>
+                    No te cuento todo esto para que te sientas culpable ni para que
+                    me respondas que sí por miedo a hacerme daño.
+                    <br>
+                    Tampoco quiero que sientas que todo lo que he hecho por ti te
+                    obliga a corresponderme. Lo que te he dado, lo que te he escrito
+                    y cada detalle que he preparado para ti han nacido de lo que
+                    siento. Nunca quise que fueran una deuda que tuvieras que pagarme.
+                </p>
+
+                <p>
+                    Pero tampoco puedo seguir ignorando lo que yo necesito.
+                    <br>
+                    Puedo quererte muchísimo y, aun así, reconocer que no puedo
+                    permanecer indefinidamente en una situación que me hace sentir
+                    inseguro sobre lo que somos.
+                    <br>
+                    Y creo que ha llegado el momento de que hablemos con sinceridad.
+                </p>
+
+                <p class="pregunta-final">
+                    Por eso quiero preguntarte algo.
+                </p>
+
+                <p class="pregunta-destacada">
+                    ¿Todavía quieres construir una relación de pareja conmigo?
+                </p>
+
+                <p>
+                    No quiero que me respondas lo que creas que quiero escuchar.
+                    No quiero un sí por compromiso, por pena o por miedo a perderme.
+                    <br>
+                    Quiero saber lo que realmente sientes y lo que realmente quieres.
+                </p>
+
+                <p>
+                    Si algo ha cambiado para ti, quiero que me lo digas. Si estás
+                    pasando por algo que no he comprendido, también quiero escucharte.
+                    Y si todavía quieres que construyamos algo juntos, quiero saberlo.
+                </p>
+
+                <p>
+                    No espero que tengas todas las respuestas ni que todo vuelva
+                    a ser como antes de un día para otro.
+                    <br>
+                    Pero sí necesito que podamos hablar de lo que está sucediendo,
+                    de lo que queremos y de si ambos estamos dispuestos a dar ese paso.
+                </p>
+
+                <p>
+                    Porque yo sí quiero.
+                </p>
+
+                <p>
+                    Quiero dejar de estar en esta línea tan delgada entre sentir
+                    que somos algo y tener que recordarme que, en realidad,
+                    todavía no lo somos.
+                </p>
+
+                <p>
+                    Quiero dejar de preguntarme si algún día sucederá o si solamente
+                    estoy esperando algo que ya no deseas.
+                    <br>
+                    Quiero saber si estamos mirando hacia el mismo lugar.
+                </p>
+
+                <p>
+                    Y, si tu respuesta es que sí, me gustaría que dejáramos de
+                    aplazarlo y comenzáramos nuestra relación de verdad, sin dejar
+                    de conocernos, sin dejar de aprender el uno del otro y sin
+                    pretender que todo será perfecto.
+                </p>
+
+                <p>
+                    No sé qué sucederá después de esta carta.
+                    <br>
+                    No sé qué me dirás cuando hablemos ni cómo me sentiré al escucharte.
+                </p>
+
+                <p>
+                    Pero sé que no quiero seguir guardándome estas palabras.
+                </p>
+
+                <p>
+                    Porque te quiero. Porque lo que hemos compartido ha significado
+                    mucho para mí. Y porque, por mucho que me asuste escuchar tu
+                    respuesta, prefiero conocer la verdad antes que seguir viviendo
+                    entre dudas.
+                </p>
+
+                <p>
+                    Así que quiero preguntártelo una última vez, mirándote y
+                    escuchando tu respuesta.
+                </p>
+
+                <p class="pregunta-destacada">
+                    ¿Quieres que seamos pareja?
+                </p>
+
+                <p>
+                    Yo quiero serlo contigo.
+                    <br>
+                    Pero necesito saber si tú también quieres serlo conmigo.
+                </p>
+
+            </div>
+
+
+            <div class="detalle-inferior" aria-hidden="true">✦</div>
+        </article>
+    </section>
+</body>
+</html>
